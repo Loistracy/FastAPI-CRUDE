@@ -1,0 +1,15 @@
+/lib/systemd/system/gleaveapi.service 
+[Unit]
+Description=My API
+After=multi-user.target
+
+
+[Service]
+Type=simple
+ExecStart=/home/gsandbox/g-leave-backend/fastapi/bin/python3 /home/gsandbox/g-leave-backend/src/main.py
+#StandardOutput=file:/opt/api/logs/api.log
+#StandardInput=tty-force
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
